@@ -3,6 +3,6 @@ const router = express.Router();
 const ctrl = require('../controllers');
 
 // Edit User
-router.put('/:userNameURL', ctrl.users.editUser)
+router.put('/:userid', ctrl.users.editUser)
 
 module.exports = router;
