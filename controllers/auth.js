@@ -4,7 +4,7 @@ const db = require('../models');
 
 // POST REGISTER -- Create New User
 const register = (req, res) => {
-    if (!req.body.firstName || !req.body.lastName || !req.body.email || !req.body.gender || !req.body.location || !req.body.userName || !req.body.password) {
+    if (!req.body.firstName || !req.body.lastName || !req.body.email || !req.body.location || !req.body.userName || !req.body.password) {
         return res.status(400).json({ status: 400, message: 'Please fill out all the information'});
     }
     // Verify Account Does Not Already Exist
@@ -33,9 +33,8 @@ const register = (req, res) => {
                     userName: req.body.userName,
                     userNameURL: req.body.userName.replace(/\s/g, "").toLowerCase(),
                     email: req.body.email,
-                    gender: req.body.gender,
                     location: req.body.location,
-                    profilePicture: req.body.profilePicture,
+                    // profilePicture: req.body.profilePicture,
                     password: hash,
                 }
 

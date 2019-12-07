@@ -14,6 +14,9 @@ const TeamSchema = mongoose.Schema({
         type: String,
         unique: true,
     },
+    playerslist: {
+        type: Array,
+    },
     forwarders: {
         type: Array,
     },

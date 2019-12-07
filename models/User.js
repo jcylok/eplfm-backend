@@ -28,10 +28,6 @@ const UserSchema = mongoose.Schema({
         type: String,
         required: [true, 'Password is required'],
     },
-    gender: {
-        type: String,
-        required: [true, 'Gender is required'],
-    },
     location: {
         type: String,
         required: [true, 'Location is required'],
