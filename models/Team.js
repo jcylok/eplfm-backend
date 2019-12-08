@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 const TeamSchema = mongoose.Schema({
     user: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
+        type: String,
+        unique: true,
     },
     name: {
         type: String,
