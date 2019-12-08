@@ -35,6 +35,9 @@ const UserSchema = mongoose.Schema({
     profilePicture: {
         type: String,
     },
+    teamID : {
+        type: String,
+    },
     dateJoined: {
         type: Date,
         default: Date.now,
