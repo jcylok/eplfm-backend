@@ -32,10 +32,18 @@ const UserSchema = mongoose.Schema({
         type: String,
         required: [true, 'Location is required'],
     },
-    profilePicture: {
+    teamID: {
         type: String,
     },
-    teamID : {
+    teamName: {
+        type: String,
+        unique: true,
+    },
+    teamNameURL: {
+        type: String,
+        unique: true,
+    },
+    profilePicture: {
         type: String,
     },
     dateJoined: {
