@@ -36,23 +36,38 @@ const createTeam = (req, res) => {
 // Show One Team
 const showOneTeam = (req, res) => {
     console.log(req.params.nameURL)
-    db.Team.findOne({nameURL: req.params.nameURL}, (err, foundTeam) => {
-        if (error) return console.log(error);
-        if (foundTeam) {
-            req.json({
-                status: 200,
-                count: 1,
-                data: foundTeam,
-                requestedAt: new Date().toLocaleString(),
-            });
+    // db.Team.find({"nameURL": `${req.params.nameURL}`}, (err, foundTeam) => {
+    //     if (error) return console.log(error);
+    //     if (foundTeam) {
+    //         req.json({
+    //             status: 200,
+    //             count: 1,
+    //             data: foundTeam,
+    //             requestedAt: new Date().toLocaleString(),
+    //         });
+    //     } else {
+    //         res.json({
+    //             status: 404,
+    //             count: 0,
+    //             data: `Team with name ${req.params.nameURL} was not found.`
+    //         });
+    //     };
+    // });
+    db.Team.findOne({"nameURL": `${req.params.nameURL}`})
+    .then(foundTeam => {
+        if(foundTeam) {
+          console.log(`Successfully found document: ${foundTeam}.`);
         } else {
-            res.json({
-                status: 404,
-                count: 0,
-                data: `Team with name ${req.params.nameURL} was not found.`
-            });
-        };
-    });
+          console.log("No document matches the provided query.");
+        }
+        res.json({
+            status: 200,
+            count: 1,
+            data: foundTeam,
+            requestedAt: new Date().toLocaleString(),
+        });
+      })
+      .catch(err => console.error(`Failed to find document: ${err}`));
 };
 
 // Edit One Team

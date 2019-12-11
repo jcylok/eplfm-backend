@@ -17,13 +17,13 @@ const TeamSchema = mongoose.Schema({
     playerslist: {
         type: Array,
     },
-    forwarders: {
+    forwarder: {
         type: Array,
     },
-    midfielders: {
+    midfielder: {
         type: Array,
     },
-    defenders: {
+    defender: {
         type: Array,
     },
     goalkeeper: {
