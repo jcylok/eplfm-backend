@@ -14,7 +14,7 @@ const routes = require('./routes');
 // CORS - Cross Origin Resource Sharing
 const corsOptions = {
     // origin: ['http://localhost:3000'],
-    origin: ['https://epl-football-manager.herokuapp.com'],
+    origin: ['http://epl-football-manager.herokuapp.com'],
     credentials: true,
     optionsSuccessStatus: 200
 };
@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 
 // Express Session - Authentication
 app.use(session({
-    store: new MongoStore({url: process.env.MONGO_URI}),
+    store: new MongoStore({url: process.env.MONGODB_URI}),
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,

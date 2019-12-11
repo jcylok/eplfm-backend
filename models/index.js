@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
-const dbUrl = process.env.MONGO_URI || 'mongodb://localhost:27017/eplfm';
+const dbUrl = process.env.MONGODB_URI || 'mongodb://localhost:27017/eplfm';
 
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
