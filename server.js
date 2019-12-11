@@ -14,7 +14,7 @@ const routes = require('./routes');
 // CORS - Cross Origin Resource Sharing
 const corsOptions = {
     // origin: ['http://localhost:3000'],
-    origin: ['http://epl-football-manager.herokuapp.com'],
+    origin: ['https://epl-football-manager.herokuapp.com'],
     credentials: true,
     optionsSuccessStatus: 200
 };
