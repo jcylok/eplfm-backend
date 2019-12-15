@@ -53,7 +53,7 @@ const showOneTeam = (req, res) => {
     //         });
     //     };
     // });
-    db.Team.findOne({"nameURL": `${req.params.nameURL}`})
+    db.Team.findOne({"user": `${req.params.userID}`})
     .then(foundTeam => {
         if(foundTeam) {
           console.log(`Successfully found document: ${foundTeam}.`);
@@ -73,7 +73,7 @@ const showOneTeam = (req, res) => {
 // Edit One Team
 const editOneTeam = (req, res) => {
     db.Team.findOneAndUpdate(
-        req.params.nameURL,
+        {"user":`${req.params.userID}`},
         req.body,
         {new: true}, (error, updatedTeam) => {
             if (error) return res.status(500).json({
